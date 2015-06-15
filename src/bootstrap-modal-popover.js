@@ -132,7 +132,7 @@
     $(function () {
         $('body').on('click.modal-popover.data-api', '[data-toggle="modal-popover"]', function (e) {
             var $this = $(this);
-            var href = $this.attr('href');
+            var href = $this.attr('data-href');
             var $dialog = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))); //strip for ie7
             var option = $dialog.data('modal-popover') ? 'toggle' : $.extend({ remote:!/#/.test(href) && href }, $dialog.data(), $this.data());
             option['$parent'] = $this;
